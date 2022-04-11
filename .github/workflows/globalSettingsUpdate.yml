@@ -1,0 +1,46 @@
+# This is a basic workflow to help you get started with Actions
+
+name: GlobalSettings
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ master ]
+    paths: [global_appsettings.json]
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v1
+      - uses: azure/appconfiguration-sync@v1
+        with:
+          # Path to the configuration file in the repo, relative to the repo root. Also supports glob patterns and multiple files
+          configurationFile: 'global_appsettings.json'
+          # Format of the configuration file. Valid values are: json, yaml, properties
+          format: 'json'
+          # Connection string for the App Configuration instance
+          connectionString: ${{ secrets.ConnectionString }}
+          # Separator used when flattening the configuration file to key-value pairs
+          separator: ':'
+          # Specifies whether to use a strict sync which will make the App Configuration instance exactly match the configuration file (deleting key-values not in the configuration file). Defaults to false
+          # strict: # optional
+          # Prefix that will be added to the front of the keys
+          # prefix: # optional
+          # Label to use when setting the key-value pairs. If not specified, a null label will be used
+          # label: # optional
+          # Max depth (positive number) for flattening the configuration file
+          # depth: # optional
+          # Stringified form of a JSON object with the following shape: { [propertyName: string]: string; }
+          # tags: # optional
+          # Content type associated with the values
+          # contentType: # optional
