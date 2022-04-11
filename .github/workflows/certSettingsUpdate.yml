@@ -1,13 +1,13 @@
 # This is a basic workflow to help you get started with Actions
 
-name: LocalSettings
+name: CertSettings
 
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ master ]
-    paths: [local_appsettings.json]
+    paths: [cert_appsettings.json]
   pull_request:
     branches: [ master ]
 
@@ -25,7 +25,7 @@ jobs:
       - uses: azure/appconfiguration-sync@v1
         with:
           # Path to the configuration file in the repo, relative to the repo root. Also supports glob patterns and multiple files
-          configurationFile: 'local_appsettings.json'
+          configurationFile: 'cert_appsettings.json'
           # Format of the configuration file. Valid values are: json, yaml, properties
           format: 'json'
           # Connection string for the App Configuration instance
@@ -37,7 +37,7 @@ jobs:
           # Prefix that will be added to the front of the keys
           # prefix: # optional
           # Label to use when setting the key-value pairs. If not specified, a null label will be used
-          label: Local # optional
+          label: Cert # optional
           # Max depth (positive number) for flattening the configuration file
           # depth: # optional
           # Stringified form of a JSON object with the following shape: { [propertyName: string]: string; }
