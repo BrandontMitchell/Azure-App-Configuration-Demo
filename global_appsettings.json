@@ -1,0 +1,52 @@
+{
+    "globalConfiguration": {
+        "Serilog": {
+            "Using": [
+                "Serilog.Sinks.Console"
+            ],
+            "MinimumLevel": {
+                "Default": "Verbose",
+                "Override": {
+                    "Microsoft": "Information",
+                    "System": "Information"
+                }
+            },
+            "WriteTo": [
+                {
+                    "Name": "Console",
+                    "Args": {
+                        "RestrictedToMinimumLevel": "Debug",
+                        "OutputTemplate": "{Timestamp:yyyy'-'MM'-'dd'T'HH':'mm':'ssK} Level=\"{Level}\" {Message:lj}{NewLine}{Exception}"
+                    }
+                },
+                {
+                    "Name": "File",
+                    "Args": {
+                        "Path": "/containerlogs",
+                        "RollingInterval": "Day",
+                        "OutputTemplate": "{Timestamp:yyyy'-'MM'-'dd'T'HH':'mm':'ssK} Level=\"{Level}\" {Message:lj}{NewLine}{Exception}",
+                        "IsShared": false,
+                        "FileSizeLimitBytes": 1234567,
+                        "RollOnFileSizeLimit": true
+                    }
+                }
+            ]
+        },
+
+        "serviceBus": {
+            "serviceBusConnectionString": "",
+            "verboseResourceDetails": false,
+            "maximumConcurrentProcesses": 1,
+            "prefetchCount": 1
+       },
+
+       "serviceLogging": {
+            "format": "KeyValuePair"
+        },
+
+        "development": {
+            "useAzureEmulator": false,
+            "mockRequestFilesPath": "Emulator\\Resources"
+       }
+    }
+}
