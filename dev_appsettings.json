@@ -1,9 +1,9 @@
 {
     "serviceConfiguration": {
         "systemArchiveService": {
-            "inputChannel": "test1",
-            "outputChannel": "test1",
-            "errorQueue": "test1",
+            "inputChannel": "testserviceinputqueue",
+            "outputChannel": "testserviceinputqueue",
+            "errorQueue": "testserviceinputqueue",
             "errorQueueTimeToLiveMinutes": 30,
             "archiveBlobStorage": {
                 "storageConnectionString": "test1",
@@ -18,9 +18,9 @@
 
         "messageFilteringService": {
             "isEnabled": true,
-            "inputChannel": "test1",
-            "outputChannel": "test1",
-            "errorQueue": "test1",
+            "inputChannel": "testserviceinputqueue",
+            "outputChannel": "testserviceinputqueue",
+            "errorQueue": "testserviceinputqueue",
             "errorQueueTimeToLiveMinutes": 30,
             "databaseStorage": {
             "ConnectionString": "test1"
@@ -28,8 +28,8 @@
         },
 
         "messageRouterService": {
-            "inputChannel": "test1",
-            "errorQueue": "test1",
+            "inputChannel": "testserviceinputqueue",
+            "errorQueue": "testserviceinputqueue",
             "errorQueueTimeToLiveMinutes": 30,
             "systemDatabase": {
             "connectionString": "test1"
