@@ -37,9 +37,9 @@
         },
 
         "messageValidationService": {
-            "inputChannel": "test1",
-            "outputChannel": "test1",
-            "errorQueue": "test1",
+            "inputChannel": "testserviceinputqueue",
+            "outputChannel": "testserviceinputqueue",
+            "errorQueue": "testserviceinputqueue",
             "errorQueueTimeToLiveMinutes": 30
         }
     }
