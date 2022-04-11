@@ -1,0 +1,46 @@
+{
+    "serviceConfiguration": {
+        "systemArchiveService": {
+            "inputChannel": "",
+            "outputChannel": "",
+            "errorQueue": "",
+            "errorQueueTimeToLiveMinutes": 30,
+            "archiveBlobStorage": {
+                "storageConnectionString": "",
+                "__comment__": "Blob container name - this needs to be environment specific",
+                "blobContainerName": ""
+            },
+            
+            "databaseStorage": {
+                "connectionString": ""
+            }
+        },
+
+        "messageFilteringService": {
+            "isEnabled": true,
+            "inputChannel": "",
+            "outputChannel": "",
+            "errorQueue": "",
+            "errorQueueTimeToLiveMinutes": 30,
+            "databaseStorage": {
+            "ConnectionString": ""
+            }
+        },
+
+        "messageRouterService": {
+            "inputChannel": "",
+            "errorQueue": "",
+            "errorQueueTimeToLiveMinutes": 30,
+            "systemDatabase": {
+            "connectionString": ""
+            }
+        },
+
+        "messageValidationService": {
+            "inputChannel": "",
+            "outputChannel": "",
+            "errorQueue": "",
+            "errorQueueTimeToLiveMinutes": 30
+        }
+    }
+}
