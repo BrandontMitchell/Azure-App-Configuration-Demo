@@ -37,7 +37,7 @@
         },
 
         "messageValidationService": {
-            "sentinel": 5,
+            "sentinel": 1,
             "inputChannel": "testserviceinputqueue",
             "outputChannel": "testserviceinputqueue",
             "errorQueue": "testserviceinputqueue",
