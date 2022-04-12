@@ -41,7 +41,7 @@
             "inputChannel": "testserviceinputqueue",
             "outputChannel": "testserviceinputqueue",
             "errorQueue": "testserviceinputqueue",
-            "errorQueueTimeToLiveMinutes":1
+            "errorQueueTimeToLiveMinutes":1000
         }
     }
 }
