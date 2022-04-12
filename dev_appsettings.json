@@ -30,7 +30,7 @@
         "messageRouterService": {
             "inputChannel": "testserviceinputqueue",
             "errorQueue": "testserviceinputqueue",
-            "errorQueueTimeToLiveMinutes": 30,
+            "errorQueueTimeToLiveMinutes": 344340,
             "systemDatabase": {
             "connectionString": "test1"
             }
